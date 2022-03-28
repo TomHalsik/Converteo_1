@@ -1,6 +1,0 @@
-sudo nginx -s stop
-sudo service mysql stop
-
-docker-compose up
-
-/survey_1?Public_Or_Private=Public&Industry=Finance&sort=Timestamp&fields=id,timestamp

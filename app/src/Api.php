@@ -54,9 +54,13 @@ class Api
             $this->httpResponse->Response(["Error" => "No database connexion"], 500);
 
         $sql = $this->requestParser->getSql();
+        if (!empty($sql['error'])){
+            $this->httpResponse->Response($sql['error'], 400);
+            exit();
+        }
+
         $requester = $this->pdo->prepare($sql['request'], array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
         $requester->execute($sql['values']);
-
 
         $this->response($requester);
     }

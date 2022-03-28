@@ -14,7 +14,7 @@ class App
         "/survey_3",
     ];
 
-    public $api;
+    private $api;
 
     public function __construct()
     {
@@ -35,6 +35,6 @@ class App
 
     public function displayReadMe()
     {
-        echo "README";
+        echo file_get_contents('template/index.html');
     }
 }
