@@ -34,19 +34,23 @@ class RequestParser
         $whereClauses = [];
         $values = [];
 
-        $params = explode('&', $uri);
-        array_shift($params);
-        foreach ($params as $param) {
-            $singleParam = explode('=', $param);
-            if ($singleParam[0] == "sort")
-                $sort = $singleParam[1];
-            else if ($singleParam[0] == "fields")
-                $fields = $singleParam[1];
-            else {
-                $values += [$singleParam[0] => $singleParam[1]];
-                $whereClauses[] = $singleParam[0];
+        if (str_contains( $uri, '?'))
+        {
+            $query = explode('?', $uri);
+            $params = explode('&', end($query));
+            foreach ($params as $param) {
+                $singleParam = explode('=', $param);
+                if ($singleParam[0] == "sort")
+                    $sort = $singleParam[1];
+                else if ($singleParam[0] == "fields")
+                    $fields = $singleParam[1];
+                else {
+                    $values += [$singleParam[0] => $singleParam[1]];
+                    $whereClauses[] = $singleParam[0];
+                }
             }
         }
+
 
         return [
             "whereClauses" => $whereClauses,
