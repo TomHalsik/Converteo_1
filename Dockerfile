@@ -5,5 +5,3 @@ RUN apt-get update \
     && apt-get install -y libzip-dev \
     && apt-get install -y zlib1g-dev \
     && rm -rf /var/lib/apt/lists/* \
-ADD conf/php.ini /etc/php/conf.d/
-ADD conf/php.ini /etc/php/cli/conf.d/

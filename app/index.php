@@ -1,12 +1,12 @@
 <?php
 use Router\Router;
-use Preprocessing\JsonParser;
+use Preprocessing\Database;
 
-require ('src/Preprocessing/JsonParser.php');
+require ('src/Preprocessing/Database.php');
 require('src/Router/Router.php');
 
-$jsonParser = new JsonParser();
-$jsonParser->parse(dirname(__FILE__) . "/data/survey_1.json");
+$database = new Database();
+$database->populateDatabase(dirname(__FILE__) . "/data/json/survey_3.json");
 
 $Router= new Router();
 $Router->run();
