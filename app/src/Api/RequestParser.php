@@ -95,10 +95,9 @@ class RequestParser
     }
 
     /**
-     * @param string $fields
      * @return string
      */
-    public function getFields(string $fields)
+    public function getFields($fields)
     {
         if (empty($fields))
             return '*';
@@ -107,10 +106,9 @@ class RequestParser
     }
 
     /**
-     * @param string $sorts
      * @return string
      */
-    public function getSort(string $sorts)
+    public function getSort($sorts)
     {
         if (empty($sorts))
             return "";

@@ -15,7 +15,8 @@ Hi! Here is my own implementation of a minimalist API for the Converteo Challeng
 > docker-compose build
 
 **[4]** Setup database
-> sh database.sh
+> docker exec -i converteo_1_db_1 mysql -u root -ptest myDb  < app/data/sql/create_table.sql;
+> docker exec -ti converteo_1_app_1 php scripts/populate.php
 
 **[5]** Finally run docker containers
 > docker-compose up

@@ -5,9 +5,9 @@ namespace Preprocessing;
 
 
 use PDO\DatabaseManager;
-use Preprocessing\JsonParser;
 
 require ('JsonParser.php');
+require (dirname(__FILE__) . '/../PDO/DatabaseManager.php');
 
 class Database
 {
@@ -21,7 +21,7 @@ class Database
         $this->pdo = new DatabaseManager();
     }
 
-    public function populateDatabase(string $jsonPath)
+    public function populate(string $jsonPath)
     {
         $params = $this->jsonParser->parse($jsonPath);
 
@@ -32,12 +32,6 @@ class Database
         $valuesInsert = implode(',', $valuesArray);
 
         $sql = sprintf("INSERT INTO `%s` (%s) VALUES %s", $params['table'], implode(', ', $params['fields']), $valuesInsert);
-        echo $sql;
-        exit();
-    }
-
-    public function createSqlFile()
-    {
-
+        $this->pdo->pdo->query($sql);
     }
 }
