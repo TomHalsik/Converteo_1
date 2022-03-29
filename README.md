@@ -40,8 +40,7 @@ Populate Table
 
 ### Call Example
 
-> /survey_2?Annual_Base_Pay[gte]=50000&fields=Annual_Base_Pay,Public_Or_Private_Company&sort=Annual_Base_Pay
-
+> /survey_2?Annual_Base_Pay[gte]=50000&fields=Annual_Base_Pay,Public_Or_Private_Company,Job_Title&sort=Annual_Base_Pay&Public_Or_Private_Company=Public
 ### Filters
 
 |Filter          |Usage                          |Example                      |
