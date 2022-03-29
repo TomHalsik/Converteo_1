@@ -8,7 +8,7 @@ class JsonParser
 {
     private $integerFields = [
         "INTEGER" => ["Annual_Base_Pay", "Annual_Bonus", "Annual_Stock_ValueBonus", "Signing_Bonus"],
-        "RANGE" => ["Age", "Postcollege_Experience", "Years_At_Employer", "Years_Of_Experience", "Annual_Weeks_Vacation",],
+        "RANGE" => ["Age", "Postcollege_Experience", "Years_In_Company", "Years_Of_Experience", "Annual_Weeks_Vacation",],
     ];
 
     private $dataNormalizer;

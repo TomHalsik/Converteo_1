@@ -9,15 +9,6 @@ class RequestParser
 
     private $error = [];
 
-    private $columns = [
-        "Id", "Timestamp", "Age", "Industry", "Job_Title", "Currency", "Postcollege_Experience", "Job_Ladder",
-        "Other_Currency", "Employment_Type", "Company_Name", "Company_Size", "Country", "City", "Public_Or_Private",
-        "Experience_In_Industry", "Experience_In_Company", "Job_Level", "Required_Hours_Per_Week", "Health_Insurance_Offered",
-        "Actual_Hours_Per_Week", "Education_Level", "Annual_Base_Pay", "Annual_Bonus", "Annual_Stock_ValueBonus",
-        "Annual_Week_Vacation", "Satisfied", "Resign_In_Year", "Opinion_industry_direction", "Gender", "Next_10_years_top_skill",
-        "Done_bootcamp", "Employer", "Location", "Years_at_Employer", "Years_of_Experience", "Signing_Bonus", "Additional_Comments",
-    ];
-
     private $operators = [
         "gte" => ">=",
         "lte" => "<=",
@@ -83,20 +74,6 @@ class RequestParser
         ];
     }
 
-    /**
-     * @param string $columns
-     */
-    public function checkColumnExist(string $columns)
-    {
-        $columnsArray = explode(',', $columns);
-        foreach ($columnsArray as $column) {
-            if (!in_array(ucfirst($column), $this->columns))
-                $this->error[] =  [
-                    "status" => 400,
-                    "message" => sprintf("Unknown column %s' in 'field list'", $column)]
-                ;
-        }
-    }
 
     /**
      * @return string
@@ -105,7 +82,6 @@ class RequestParser
     {
         if (empty($fields))
             return '*';
-        $this->checkColumnExist($fields);
         return $fields;
     }
 
@@ -116,7 +92,6 @@ class RequestParser
     {
         if (empty($sorts))
             return "";
-        $this->checkColumnExist($sorts);
         return sprintf("ORDER BY %s", $sorts);
     }
 

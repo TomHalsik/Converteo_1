@@ -5,6 +5,12 @@
     <li><a href="/survey_2">localhost:8001/survey_2</a></li>
     <li><a href="/survey_3">localhost:8001/survey_3</a></li>
 </ul>
+
+<h3 id="call-example">Call Example</h3>
+<blockquote>
+    <p>/survey_2?Annual_Base_Pay[gte]=50000&amp;fields=Annual_Base_Pay,Public_Or_Private_Company&amp;sort=Annual_Base_Pay</p>
+</blockquote>
+
 <h3 id="filters">Filters</h3>
 <table>
     <thead>
@@ -32,66 +38,96 @@
     </tr>
     </tbody>
 </table>
+
+<h3 id="operator">Operator</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Operator</th>
+        <th>Usage</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>>=</td>
+        <td>[gte]</td>
+    </tr>
+    <tr>
+        <td>&lt;=</td>
+        <td>[lte]</td>
+    </tr>
+    <tr>
+        <td>!&gt;</td>
+        <td>[ngt]</td>
+    </tr>
+    <tr>
+        <td>!&lt;</td>
+        <td>[nlt]</td>
+    </tr>
+    </tbody>
+</table>
+
+
 <h2 id="tables">Tables</h2>
 <p>For more informations check tables in PhpMyAdmin (<a href="localhost:8000">localhost:8000</a>)</p>
 <h3 id="survey_1">survey_1</h3>
 <ul>
-    <li>id</li>
-    <li>Timestamp</li>
-    <li>Age</li>
-    <li>Industry</li>
-    <li>Job_Title</li>
-    <li>Salary</li>
-    <li>Currency</li>
-    <li>Location</li>
-    <li>Postcollege_Experience</li>
-    <li>Additionnal_Comments</li>
-    <li>Other_Currency</li>
+    <li>id (int)</li>
+    <li>Timestamp varchar(19)</li>
+    <li>Age (int)</li>
+    <li>Industry varchar(255)</li>
+    <li>Job_Titlevarchar(255)</li>
+    <li>Annual_Base_Pay(float)</li>
+    <li>Currencyvarchar(255)</li>
+    <li>Locationvarchar(255)</li>
+    <li>Postcollege_Experience (int)</li>
+    <li>Additionnal_Commentst (ext)</li>
+    <li>Other_Currency varchar(255)</li>
 </ul>
 <h3 id="survey_2">survey_2</h3>
 <ul>
-    <li>id</li>
-    <li>Timestamp</li>
-    <li>Employment_Type</li>
-    <li>Company_Name</li>
-    <li>Company_Size</li>
-    <li>Country</li>
-    <li>City</li>
-    <li>Industry</li>
-    <li>Public_Or_Private</li>
-    <li>Experience_In_Industry</li>
-    <li>Experience_In_Company</li>
-    <li>Job_Title</li>
-    <li>Job_Ladder</li>
-    <li>Job_Level</li>
-    <li>Required_Hours_Per_Week</li>
-    <li>Actual_Hours_Per_Week</li>
-    <li>Education_Level</li>
-    <li>Annual_Base_Pay</li>
-    <li>Annual_Bonus</li>
-    <li>Annual_Stock_ValueBonus</li>
-    <li>Health_Insurance_Offered</li>
-    <li>Annual_Week_Vacation</li>
-    <li>Satisfied</li>
-    <li>Resign_In_Year</li>
-    <li>Opinion_industry_direction</li>
-    <li>Gender</li>
-    <li>Next_10_years_top_skill</li>
-    <li>Done_bootcamp</li>
+    <li>id (int)</li>
+    <li>Timestamp varchar(19)</li>
+    <li>Employment_Type varchar(255)</li>
+    <li>Company_Name varchar(255)</li>
+    <li>Company_Size varchar(255)</li>
+    <li>Country varchar(255)</li>
+    <li>City varchar(255)</li>
+    <li>Industry varchar(255)</li>
+    <li>Public_Or_Private_Company varchar(255)</li>
+    <li>Years_Of_Experience int</li>
+    <li>Years_In_Company int</li>
+    <li>Job_Title varchar(255)</li>
+    <li>Job_Ladder varchar(255)</li>
+    <li>Job_Level varchar(255)</li>
+    <li>Required_Hours_Per_Week varchar(255)</li>
+    <li>Actual_Hours_Per_Week varchar(255)</li>
+    <li>Education_Level varchar(255)</li>
+    <li>Annual_Base_Pay float</li>
+    <li>Annual_Bonus float</li>
+    <li>Annual_Stock_ValueBonus float</li>
+    <li>Health_Insurance_Offered varchar(3)</li>
+    <li>Annual_Weeks_Vacation int</li>
+    <li>Satisfied varchar(255)</li>
+    <li>Resign_In_Year varchar(255)</li>
+    <li>Opinion_industry_direction text</li>
+    <li>Gender varchar(255)</li>
+    <li>Next_10_years_top_skill varchar(500)</li>
+    <li>Done_Bootcamp varchar(255)</li>
 </ul>
 <h3 id="survey_3">survey_3</h3>
 <ul>
-    <li>id</li>
-    <li>Timestamp</li>
-    <li>Employer</li>
-    <li>Location</li>
-    <li>Job_Title</li>
-    <li>Years_at_Employer</li>
-    <li>Years_of_Experience</li>
-    <li>Annual_Base_Pay</li>
-    <li>Signing_Bonus</li>
-    <li>Annual_Bonus</li>
-    <li>Annual_Stock_ValueBonus</li>
-    <li>Gender</li>
-    <li>Additional_Comments</li>
+    <li>id int</li>
+    <li>Timestamp varchar(19)</li>
+    <li>Company_Name varchar(255)</li>
+    <li>Location varchar(255)</li>
+    <li>Job_Title varchar(255)</li>
+    <li>Years_In_Company int</li>
+    <li>Years_Of_Experience int</li>
+    <li>Annual_Base_Pay float</li>
+    <li>Signing_Bonus float</li>
+    <li>Annual_Bonus float</li>
+    <li>Annual_Stock_ValueBonus float</li>
+    <li>Gender varchar(255)</li>
+    <li>Additional_Comments varchar(500)</li>
 </ul>

@@ -38,6 +38,10 @@ Populate Table
 - [localhost:8001/survey_2](localhost:8001/survey_2)
 - [localhost:8001/survey_3](localhost:8001/survey_3)
 
+### Call Example
+
+> /survey_2?Annual_Base_Pay[gte]=50000&fields=Annual_Base_Pay,Public_Or_Private_Company&sort=Annual_Base_Pay
+
 ### Filters
 
 |Filter          |Usage                          |Example                      |
@@ -63,59 +67,64 @@ For more informations check tables in PhpMyAdmin ([localhost:8000](localhost:800
 
 ### survey_1
 
-- id
-- Timestamp
-- Age
-- Industry
-- Job_Title
-- Salary
-- Currency
-- Location
-- Postcollege_Experience
-- Additionnal_Comments
-- Other_Currency
+- id (int)
+- Timestamp varchar(19)
+- Age (int)
+- Industry varchar(255)
+- Job_Titlevarchar(255)
+- Annual_Base_Pay(float)
+- Currencyvarchar(255)
+- Locationvarchar(255)
+- Postcollege_Experience (int)
+- Additionnal_Commentst (ext)
+- Other_Currency varchar(255)
+
 
 ### survey_2
-- id
-- Timestamp
-- Employment_Type
-- Company_Name
-- Company_Size
-- Country
-- City
-- Industry
-- Public_Or_Private
-- Experience_In_Industry
-- Experience_In_Company
-- Job_Title
-- Job_Ladder
-- Job_Level
-- Required_Hours_Per_Week
-- Actual_Hours_Per_Week
-- Education_Level
-- Annual_Base_Pay
-- Annual_Bonus
-- Annual_Stock_ValueBonus
-- Health_Insurance_Offered
-- Annual_Week_Vacation
-- Satisfied
-- Resign_In_Year
-- Opinion_industry_direction
-- Gender
-- Next_10_years_top_skill
-- Done_bootcamp
+
+- id (int)
+- Timestamp varchar(19)
+- Employment_Type varchar(255)
+- Company_Name varchar(255)
+- Company_Size varchar(255)
+- Country varchar(255)
+- City varchar(255)
+- Industry varchar(255)
+- Public_Or_Private_Company varchar(255)
+- Years_Of_Experience int
+- Years_In_Company int
+- Job_Title varchar(255)
+- Job_Ladder varchar(255)
+- Job_Level varchar(255)
+- Required_Hours_Per_Week varchar(255)
+- Actual_Hours_Per_Week varchar(255)
+- Education_Level varchar(255)
+- Annual_Base_Pay float
+- Annual_Bonus float
+- Annual_Stock_ValueBonus float
+- Health_Insurance_Offered varchar(3)
+- Annual_Weeks_Vacation int
+- Satisfied varchar(255)
+- Resign_In_Year varchar(255)
+- Opinion_industry_direction text
+- Gender varchar(255)
+- Next_10_years_top_skill varchar(500)
+- Done_Bootcamp varchar(255)
+
+
 
 ### survey_3
-- id
-- Timestamp
-- Employer
-- Location
-- Job_Title
-- Years_at_Employer
-- Years_of_Experience
-- Annual_Base_Pay
-- Signing_Bonus
-- Annual_Bonus
-- Annual_Stock_ValueBonus
-- Gender
-- Additional_Comments
+- id int
+- Timestamp varchar(19)
+- Company_Name varchar(255)
+- Location varchar(255)
+- Job_Title varchar(255)
+- Years_In_Company int
+- Years_Of_Experience int
+- Annual_Base_Pay float
+- Signing_Bonus float
+- Annual_Bonus float
+- Annual_Stock_ValueBonus float
+- Gender varchar(255)
+- Additional_Comments varchar(500)
+
